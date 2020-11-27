@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Alumno;
 use Illuminate\Http\Request;
 use App\Http\Requests\AlumnoPost;
+use Illuminate\Support\Facades\Log;
 
 class AlumnosController extends Controller
 {
@@ -16,6 +17,7 @@ class AlumnosController extends Controller
      */
     public function index()
     {
+        Log::info('Peticion realizada');
         $alumnos = Alumno::all();
         return view('alumnos.index', ['alumnos' => $alumnos]);
     }
